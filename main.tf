@@ -17,7 +17,7 @@ locals {
 
 
 resource "google_project_service" "datacatalog_api" {
-  project = local.config.project
+  project = terraform.workspace
   service = "datacatalog.googleapis.com"
   disable_on_destroy = false
 }
@@ -25,7 +25,7 @@ resource "google_project_service" "datacatalog_api" {
 resource "google_data_catalog_taxonomy" "my_taxonomy" {
   for_each = local.indexed_taxonomies
   provider = google-beta
-  project = local.config.project
+  project = terraform.workspace
   region = each.value.taxonomy_region
   display_name = each.value.taxonomy_name
   description = each.value.taxonomy_description
