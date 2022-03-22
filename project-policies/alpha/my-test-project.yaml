@@ -1,0 +1,27 @@
+taxonomies:
+  - taxonomy_name: Finance taxonomy
+    taxonomy_description: Finance: Taxonomy for Finance analytics team
+    taxonomy_region: eu
+    policies:
+      - display_name: Card Number
+        policy_description: User Payment Card Number
+        accesses:
+          "roles/datacatalog.categoryFineGrainedReader": # this is the role for column level access
+            - "group:finance-superuser@ecorp.com"
+            - "user:joe.bloggs@gmail.com"
+            - "user:jane.doe@gmail.com"
+      - display_name: Account Name
+        policy_description: Finance: User Account Name
+        accesses:
+          "roles/datacatalog.categoryFineGrainedReader":
+            - "user:jane.doe@gmail.com"
+  - taxonomy_name: HR taxonomy
+    taxonomy_description: Taxonomy for HR uses
+    taxonomy_region: us
+    policies:
+      - display_name: Salary
+        policy_description: Employee salary number
+        accesses:
+          "roles/datacatalog.categoryAdmin":
+            - "group:hr-superuser@ecorp.com"
+            - "user:john.smith@gmail.com"
