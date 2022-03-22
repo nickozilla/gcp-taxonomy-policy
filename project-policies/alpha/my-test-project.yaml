@@ -8,7 +8,7 @@ taxonomies:
         accesses:
           "roles/datacatalog.categoryFineGrainedReader": # this is the role for column level access
             - "group:finance-superuser@ecorp.com"
-            - "user:joe.bloggs@gmail.com"
+            - "serviceAccount:my-other-app@appspot.gserviceaccount.com"
             - "user:jane.doe@gmail.com"
       - display_name: Account Name
         policy_description: Finance: User Account Name
